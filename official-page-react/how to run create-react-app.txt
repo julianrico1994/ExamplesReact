@@ -1,0 +1,8 @@
+PS C:\Users\JulianGarcia\Documents\Proyectos REACT\official-page-react> npm install -g create-react-app
+C:\Users\JulianGarcia\AppData\Roaming\npm\create-react-app -> C:\Users\JulianGarcia\AppData\Roaming\npm\node_modules\create-react-app\index.js
++ create-react-app@3.0.1
+updated 1 package in 4.913s
+
+create new proyect
+
+> C:\Users\JulianGarcia\AppData\Roaming\npm\create-react-app reconciliation

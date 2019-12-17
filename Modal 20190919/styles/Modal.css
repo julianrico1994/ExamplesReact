@@ -1,0 +1,113 @@
+/* Modal.css */ 
+/* 
+    Header.css 
+    NOTA: Todas las constantes que se utilizan en las variables, estan definidas en el archivo de 
+    estilos 'Settings.css'. La configuracion de los SCROLL, tambien se encuentran en 'Settings.css'
+*/
+
+@import url("../../common/styles/settings.css");
+
+.modal.content_modal { 
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    /* Este index es '4' por la necesidad que el Modal, este por encima de las reacciones */
+    z-index: 4;
+    top: 20px;
+    bottom: 20px;
+    left: 50px;
+    right: 50px;
+}
+
+.modal .backdrop {
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal .modal_body {
+    position: fixed;
+    z-index: 2;
+    width: 800px;
+    height: calc(100% - 40px - 60px);
+    border-radius: 5px;
+    padding: 30px 40px 30px 40px;
+    /* background-color: var(--astronaut-blue); */
+}
+
+.modal .astronaut-blue {
+    background-color: var(--astronaut-blue);
+}
+
+.modal .light-gray{
+    background-color: var(--light-gray-2);
+}
+
+.modal .modal_children {
+    height: calc(100% - 130px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* background-color: rgb(1, 1, 1, 0.1); */
+}
+
+.modal .modal_header {
+    margin-bottom: 30px;
+}
+
+
+/**
+ * -------------------------------------------------------------------------------------------------
+ * Media querys
+ * -------------------------------------------------------------------------------------------------
+ */
+/*  800 tamaño del .modal_body
+    80px --> Por el padding izq y der del .modal_body  
+    100px --> Por el left y right del .content_modal 
+    max-width --> suma de 800 + 80 + 100 = 980
+*/
+@media only screen and (max-width: 980px) {
+    .modal_body {
+        width: calc(100% - 100px - 80px);
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .content_modal { 
+        left: 25px;
+        right: 25px;
+    }
+    .modal_body {
+        width: calc(100% - 50px - 80px);
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    .content_modal { 
+        left: 15px;
+        right: 15px;
+    }
+    .modal_body {
+        width: calc(100% - 30px - 80px);
+    }
+}
+
+@media only screen and (max-width: 590px) {
+    .modal_children {
+        height: calc(100% - 130px - 44px);
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .content_modal { 
+        left: 0px;
+        right: 0px;
+    }
+    .modal_body {
+        padding: 20px 15px 20px 15px;
+        width: calc(100% - 0px - 30px);
+    }
+}

@@ -1,0 +1,106 @@
+.modalV2 { 
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    /* Este index es '4' por la necesidad que el Modal, este por encima de las reacciones */
+    z-index: 4;
+    top: 20px;
+    bottom: 20px;
+    left: 50px;
+    right: 50px;
+}
+
+.modalV2 .backdrop {
+    position: fixed;
+    /* Dado que esta dentro de modalV2 esta en la misma capa que este, al aumentar el z-index 
+    quedara en una capa superior. */
+    z-index: 1;
+    top: 0px; bottom: 0px;
+    left: 0px; right: 0px;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(1.2px);
+    
+}
+
+.modalV2 .modal_body {
+    box-sizing: border-box;
+    z-index: 2;
+    width: 800px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1.2px);
+}
+
+.modalV2.full-size {
+    top: 0px; bottom: 0px;
+    left: 0px; right: 0px;
+}
+
+.modalV2.full-size > .backdrop {
+    display: none;
+}
+
+.modalV2.full-size > .modal_body {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    box-sizing: border-box;
+}
+/* *************************************************************************************************
+    ModalType
+************************************************************************************************* */
+/* .modalV2.powerUpDetail, 
+.modalV2.reaction {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: transparent ;
+} */
+
+/* .modalV2.powerUpDetail > .modal_body, 
+.modalV2.reaction > .modal_body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--blackcurrant-opacity);
+} */
+
+/* .modalV2.powerUpDetail > .backdrop,
+.modalV2.reaction > .backdrop {
+    display: none;
+}
+
+.modalV2.feedback > .modal_body {
+    background-color: var(--light-gray-2);
+} */
+
+/* *************************************************************************************************
+    Trasitions and MediaQuerys
+************************************************************************************************* */
+/* .modalV2 .trasition_color_width_height {
+    -webkit-transition: background-color .4s ease-out, width .5s ease-out, height .5s ease-out;
+    -moz-transition: background-color .4s ease-out, width .5s ease-out, height .5s ease-out;
+    -o-transition: background-color .4s ease-out, width .5s ease-out, height .5s ease-out;
+    transition: background-color .4s ease-out, width .5s ease-out, height .5s ease-out;
+} */
+
+.modalV2 .trasition_all {
+    -webkit-transition: all .5s ease-out, ;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+@media only screen and (max-width: 1024px) {
+    .modalV2 {
+        left: 20px;
+        right: 20px;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .modalV2 {
+        top: 10px;
+        bottom: 10px;
+    }
+}
